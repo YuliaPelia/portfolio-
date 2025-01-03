@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props,
       apple: '/image/favicon_io/apple-touch-icon.png', 
     },
     manifest: '/image/favicon_io/site.webmanifest', 
-    metadataBase: new URL(`https://portfolio-black-kappa-60.vercel.app/${locale}/`),
+    metadataBase: new URL(`https://portfolio-black-kappa-60.vercel.app/`),
     openGraph: {
       images: ['/image/OGP/fb.png'],
     },
