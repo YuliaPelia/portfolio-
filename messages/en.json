@@ -2,5 +2,34 @@
     "HomePage": {
       "title": "Hello world!",
       "about": "Go to the about page"
+    },
+    "Metadata": {
+      "title": "Yulia Pelyachyk | Website and mobile application development for business and startups 👩🏽‍💻 - High-quality ✅, affordable ✅, unique ✅",
+      "description": "Web development for businesses and startups: from landing pages to online stores, including mobile applications. Quality, speed, and individual approach in every project. I will make your website functional and attractive to users!"
+    },
+    "Header": {
+      "list": {
+        "about": {
+          "title": "About me",
+          "link": "/"
+        },
+        "services": {
+          "title": "Services",
+          "link": "/"
+        },
+        "portfolio": {
+          "title": "Portfolio",
+          "link": "/"
+        },
+        "blog": {
+          "title": "Blog",
+          "link": "/"
+        },
+        "contact": {
+          "title": "Contact",
+          "link": "/"
+        }
+      },
+      "contact": "Order a site"
     }
   }

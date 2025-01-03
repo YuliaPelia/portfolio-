@@ -5,8 +5,13 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
-import { Montserrat, Inter, Epilogue } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 
+// type Props = {
+//   params: Promise<{ locale: string }>
+//   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+// }
+type Locale = 'en' | 'ua' ;
 
 
 const inter = Inter({
@@ -17,10 +22,29 @@ const montserrat = Montserrat({
   // variable: "--font-montserrat",
   subsets: ["latin"],
 });
-const epilogue = Epilogue({
-  // variable: "--font-epilogue",
-  subsets: ["latin"],
-})
+
+
+// export async function generateMetadata({ params }: Props,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata>  {
+
+//   const locale = (await params).locale
+//   console.log('id',locale);
+  
+//   const previousImages = (await parent).openGraph?.images || []
+
+//   console.log('previousImages',previousImages);
+  
+  
+
+//   return {
+//     title: '...',
+//     metadataBase: new URL("http://localhost:3000/"),
+//     openGraph: {
+//       images: ['/image/OGP/fb.png', ...previousImages],
+//     },
+//   }
+// }
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -35,7 +59,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
@@ -45,7 +69,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${montserrat.className} antialiased`} >
+      <body className={`${montserrat.className} ${inter.className} antialiased`} >
 
           <NextIntlClientProvider messages={messages}>
             {children}
