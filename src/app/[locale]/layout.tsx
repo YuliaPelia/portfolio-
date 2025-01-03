@@ -7,12 +7,9 @@ import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 import { Montserrat, Inter } from "next/font/google";
 import { getTranslations } from 'next-intl/server';
+import { Props, Locale } from '@/types/types';
 
-type Props = {
-  params: Promise<{ locale: string }>
- 
-}
-type Locale = 'en' | 'ua' ;
+
 
 
 const inter = Inter({
@@ -49,7 +46,22 @@ export async function generateMetadata({ params }: Props,
     manifest: '/image/favicon_io/site.webmanifest', 
     metadataBase: new URL(`https://portfolio-black-kappa-60.vercel.app/`),
     openGraph: {
-      images: ['/image/OGP/fb.png'],
+      title: t('title'),
+      description: t('description'),
+      type: 'website',
+      url: `https://portfolio-black-kappa-60.vercel.app/`,
+      siteName: 'Yulia Pelyachyk',
+
+      images: [{
+        url: '/image/OGP/fb.png',
+        width: 1200,
+        height: 630
+      },
+    {
+      url: '/image/OGP/tw.png',
+      width: 800,
+      height: 600
+    }],
     },
   }
 }
