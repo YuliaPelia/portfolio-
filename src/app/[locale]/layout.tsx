@@ -53,12 +53,12 @@ export async function generateMetadata({ params }: Props,
       siteName: 'Yulia Pelyachyk',
 
       images: [{
-        url:  '/image/OGP/fb.png',
+        url: locale === 'ua' ? '/image/OGP/fb.png' : '/image/OGP/fb-en.png',
         width: 1200,
         height: 630
       },
     {
-      url: '/image/OGP/tw.png',
+      url: locale === 'ua' ? '/image/OGP/tw.png' : '/image/OGP/tw-en.png',
       width: 800,
       height: 600
     }],
