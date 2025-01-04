@@ -48,12 +48,31 @@ export function Header() {
                 item.classList.add('active');
             }
         })
+
+
     }, [locale]);
+
+
+
+    const headerMenu = document.querySelector('.header__menu');
+    const toggle = document.querySelector('.header__toggle');
+
+
+    useEffect(() => {
+
+        const isMenuOpen = JSON.parse(localStorage.getItem('isMenuOpen') || 'false');
+        setIsMenuOpen(isMenuOpen);
+
+        if (isMenuOpen) {
+            headerMenu?.classList.add('header__menu--active');
+            toggle?.classList.add('header__toggle--active');
+        }
+    }, [headerMenu?.classList, toggle?.classList]);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-        const headerMenu = document.querySelector('.header__menu');
-        const toggle = document.querySelector('.header__toggle');
+        console.log(isMenuOpen);
+        localStorage.setItem('isMenuOpen', JSON.stringify(!isMenuOpen));
 
         toggle?.classList.toggle('header__toggle--active');
         headerMenu?.classList.toggle('header__menu--active');
