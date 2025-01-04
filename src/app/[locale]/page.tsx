@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+
 import { Header } from '../sections/header';
 import { Footer } from '../sections/footer';
 import { Provider } from 'react-redux';
@@ -17,7 +17,7 @@ export default function HomePage() {
         <Provider store={store}>
             <Header />
             <h1>{t('title')}</h1>
-            <Link href="/about">{t('about')}</Link>
+            {/* <Link href="/about">{t('about')}</Link> */}
 
             <Footer />
         </Provider>

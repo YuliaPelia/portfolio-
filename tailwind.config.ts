@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        body: '#ffffff',
+				king: '#645728',
+				dark: '#2b2712',
+				coral: '#aa9636',
+				light: '#bfa783',
+				second: '#595152',
       },
     },
   },

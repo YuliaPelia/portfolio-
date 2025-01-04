@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 import { Montserrat, Inter } from "next/font/google";
 import { getTranslations } from 'next-intl/server';
 import { Props, Locale } from '@/types/types';
-
+import '@/styles/globals.scss';
 
 
 
@@ -93,7 +93,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={`${montserrat.className} ${inter.className} antialiased`} >
 
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
             {children}
           </NextIntlClientProvider>
       </body>
