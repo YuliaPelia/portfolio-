@@ -8,7 +8,7 @@ import { toggleTheme } from "@/store/slices/theme";
 import { RootState } from "@/store/store";
 
 import { useLocale } from "next-intl";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 
 
@@ -20,7 +20,8 @@ export function Header() {
     const isDarkTheme = useSelector((state: RootState) => state.theme.isDarkTheme);
     const tNavList = useTranslations('Header.list');
     const keys = ['about', 'services', 'portfolio', 'blog', 'contact'] as const;
-
+    const headerMenuRef = useRef<HTMLDivElement>(null);
+    const toggleRef = useRef<HTMLDivElement>(null);
 
     const switchLang = (e: React.MouseEvent<HTMLDivElement>) => {
 
@@ -54,24 +55,24 @@ export function Header() {
 
 
 
-    const headerMenu = document.querySelector('.header__menu');
-    const toggle = document.querySelector('.header__toggle');
+    const headerMenu = headerMenuRef.current;
+    const toggle = toggleRef.current;
 
 
     useEffect(() => {
-
         const isMenuOpen = JSON.parse(localStorage.getItem('isMenuOpen') || 'false');
         setIsMenuOpen(isMenuOpen);
-
+    
         if (isMenuOpen) {
-            headerMenu?.classList.add('header__menu--active');
-            toggle?.classList.add('header__toggle--active');
+            headerMenuRef.current?.classList.add('header__menu--active');
+            toggleRef.current?.classList.add('header__toggle--active');
         }
-    }, [headerMenu?.classList, toggle?.classList]);
+    }, [headerMenu]);
+    
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-        console.log(isMenuOpen);
+        console.log(!isMenuOpen);
         localStorage.setItem('isMenuOpen', JSON.stringify(!isMenuOpen));
 
         toggle?.classList.toggle('header__toggle--active');
@@ -80,12 +81,12 @@ export function Header() {
     };
 
     return (
-        <div>
+        <div className="bg-inherit">
             <header className="header">
                 <div className="container">
-                    <Link href="/">
+                    <Link className="header__logo--link" href="/">
                         <Image
-                            src="/image/header/logo-dark.svg"
+                            src={isDarkTheme ? "/image/header/logo-light.svg": "/image/header/logo-dark.svg"}
                             alt="Logo"
                             width={50}
                             height={50}
@@ -94,18 +95,18 @@ export function Header() {
                         />
                     </Link>
 
-                    <div className="header__toggle " onClick={toggleMenu}>
+                    <div ref={toggleRef} className="header__toggle " onClick={toggleMenu}>
                         <div></div>
                         <div></div>
                         <div ></div>
                     </div>
 
-                    <div className="header__menu">
+                    <div className="header__menu" ref={headerMenuRef}>
                         <ul className='header__list xl:flex xl:flex-row xl:gap-6'>
                             {keys.map((key) => (
                                 <li key={key}>
 
-                                    <Link className='header__link ' href={tNavList(`${key}.link`)}>{tNavList(`${key}.title`)}</Link>
+                                    <Link className='header__link ' href={`/${locale}/${tNavList(`${key}.link`)}`}>{tNavList(`${key}.title`)}</Link>
                                 </li>
                             ))}
                         </ul>

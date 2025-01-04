@@ -91,7 +91,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${montserrat.className} ${inter.className} antialiased`} >
+      <body className={`${montserrat.className} ${inter.className} antialiased text-dark bg-white`} >
 
           <NextIntlClientProvider locale={locale} messages={messages}>
             {children}

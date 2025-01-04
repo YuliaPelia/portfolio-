@@ -1,12 +1,15 @@
 .header {
-    @apply text-dark py-2 fixed top-0 left-0 xl:static w-full z-50 bg-white;
+    @apply  py-2 fixed top-0 left-0 xl:static w-full z-50 bg-inherit;
 
     .container {
-        @apply relative flex items-center xl:gap-20
+        @apply relative flex items-center  xl:gap-[10%] 2xl:gap-[20%];
     }
 
     &__logo {
-        @apply xl:hidden w-14 h-14 relative md:w-20 md:h-20 z-10
+        @apply  w-14 h-14 relative md:w-20 md:h-20 z-10;
+        &--link {
+            @apply flex-shrink-0;
+        }
     }
 
     &__nav {
@@ -48,7 +51,7 @@
     }
 
     &__menu {
-        @apply xl:w-full opacity-0 xl:opacity-100 xl:pointer-events-auto pointer-events-none bottom-[-100%] left-0 xl:static xl:flex xl:items-center xl:justify-between fixed duration-500 h-[100vh] w-[100vw] flex text-center items-center flex-col justify-center gap-10 md:gap-12 bg-white;
+        @apply xl:w-full opacity-0 xl:opacity-100 xl:pointer-events-auto pointer-events-none bottom-[-100%] left-0 xl:static xl:flex xl:items-center xl:justify-between fixed duration-500 h-[100vh] w-[100vw] flex text-center items-center flex-col justify-center gap-10 md:gap-12 bg-inherit xl:h-auto xl:flex-row ;
 
         &--active {
             @apply bottom-0 opacity-100 pointer-events-auto left-0;
@@ -61,7 +64,7 @@
     }
 
     &__link {
-        @apply text-lg md:text-2xl font-semibold duration-75 hover:text-coral focus:text-coral xl:text-base block hover:scale-105;
+        @apply text-lg md:text-2xl font-semibold duration-75 hover:text-coral focus:text-coral xl:text-base block hover:scale-105 hover:after:w-[100%] after:h-[2px] hover:after:bg-coral hover:after:absolute hover:after:bottom-0 hover:after:left-0 after:left-[-100%] transition-all after:duration-700 after:ease-in-out after:content-[''] overflow-hidden;
 
     }
 
@@ -73,7 +76,7 @@
         }
 
         .active {
-            @apply text-second scale-105;
+            @apply  scale-105 after:w-[100%] after:h-[2px] after:bg-coral after:absolute after:bottom-0 after:left-0 after:content-[''] overflow-hidden;
             text-shadow: 3px 0 2px #bfa783;
         }
     }
