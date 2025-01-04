@@ -29,39 +29,62 @@
             }
         }
 
+        &--active {
+            @apply relative ;
+            div{
+                @apply absolute;
+                &:nth-child(1){
+                    @apply top-2 rotate-45;
+                }
+                &:nth-child(2){
+                    @apply opacity-0 translate-x-[-1000px];
+                }
+                &:nth-child(3){
+                    @apply top-2 -rotate-45;
+                }
+            }
+        }
 
     }
 
     &__menu {
-        @apply xl:w-full opacity-0 xl:opacity-100 xl:pointer-events-auto pointer-events-none bottom-[-100%] xl:static xl:flex xl:items-center xl:justify-between fixed duration-500
+        @apply xl:w-full opacity-0 xl:opacity-100 xl:pointer-events-auto pointer-events-none bottom-[-100%] left-0 xl:static xl:flex xl:items-center xl:justify-between fixed duration-500 h-[100vh] w-[100vw] flex text-center items-center flex-col justify-center gap-10 md:gap-12 bg-white;
+
+        &--active {
+            @apply bottom-0 opacity-100 pointer-events-auto left-0;
+
+        }
     }
 
     &__list {
         @apply flex flex-col gap-4 md:gap-6 xl:flex xl:flex-row xl:gap-6;
     }
+
     &__link {
-        @apply text-lg md:text-2xl  font-semibold duration-75 hover:text-coral focus:text-coral xl:text-base block hover:scale-105;
-     
+        @apply text-lg md:text-2xl font-semibold duration-75 hover:text-coral focus:text-coral xl:text-base block hover:scale-105;
+
     }
+
     &__lang {
-        @apply flex gap-2 text-lg md:text-2xl font-normal xl:text-base ;
+        @apply flex gap-2 text-lg md:text-2xl font-normal xl:text-base;
+
         a {
             @apply hover:text-second duration-500 hover:scale-110
         }
+
         .active {
-            @apply text-second scale-105 ;
+            @apply text-second scale-105;
             text-shadow: 3px 0 2px #bfa783;
         }
     }
-    &__btn {
-        @apply text-lg bg-light text-center py-2 px-6 rounded-full text-white font-semibold duration-500 hover:text-light focus:text-light hover:bg-white hover:border-light focus:bg-inherit focus:border-light border-[1px] hover:border-solid cursor-pointer xl:w-[200px] xl:text-base ;
-    }
-    &__theme {
-        @apply text-lg  hover:text-light w-[70px] font-semibold duration-500 cursor-pointer xl:text-base;
-    }
-    .header__menu--active {
-        @apply bg-white h-[100vh] w-[100vw] bottom-0 opacity-100 pointer-events-auto left-0 flex text-center items-center flex-col justify-center gap-10 md:gap-12;
 
+    &__btn {
+        @apply text-lg bg-light text-center py-2 px-6 rounded-full text-white font-semibold duration-500 hover:text-light focus:text-light hover:bg-white hover:border-light focus:bg-inherit focus:border-light border-[1px] hover:border-solid cursor-pointer xl:w-[200px] xl:text-base;
     }
+
+    &__theme {
+        @apply text-lg hover:text-light w-[70px] font-semibold duration-500 cursor-pointer xl:text-base;
+    }
+
 
 }

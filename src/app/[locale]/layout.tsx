@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props,
 
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
-  console.log('id',locale);
+
   
   // const previousImages = (await parent).openGraph?.images || []
 
