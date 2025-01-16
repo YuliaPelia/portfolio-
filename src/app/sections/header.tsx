@@ -3,9 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "@/store/slices/theme";
-import { RootState } from "@/store/store";
+// import { useDispatch, useSelector } from "react-redux";
+// import { toggleTheme } from "@/store/slices/theme";
+// import { RootState } from "@/store/store";
+import { useTheme } from "@/theme/Theme";
 
 import { useLocale } from "next-intl";
 import { useState, useEffect, useRef } from "react";
@@ -14,10 +15,11 @@ import { useState, useEffect, useRef } from "react";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
     const locale = useLocale();
     const t = useTranslations('Header');
-    const dispatch = useDispatch();
-    const isDarkTheme = useSelector((state: RootState) => state.theme.isDarkTheme);
+    // const dispatch = useDispatch();
+    // const isDarkTheme = useSelector((state: RootState) => state.theme.isDarkTheme);
     const tNavList = useTranslations('Header.list');
     const keys = ['about', 'services', 'portfolio', 'blog', 'contact'] as const;
     const headerMenuRef = useRef<HTMLDivElement>(null);
@@ -62,13 +64,13 @@ export function Header() {
     useEffect(() => {
         const isMenuOpen = JSON.parse(localStorage.getItem('isMenuOpen') || 'false');
         setIsMenuOpen(isMenuOpen);
-    
+
         if (isMenuOpen) {
             headerMenuRef.current?.classList.add('header__menu--active');
             toggleRef.current?.classList.add('header__toggle--active');
         }
     }, [headerMenu]);
-    
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -86,7 +88,7 @@ export function Header() {
                 <div className="container">
                     <Link className="header__logo--link" href="/">
                         <Image
-                            src={isDarkTheme ? "/image/header/logo-light.svg": "/image/header/logo-dark.svg"}
+                            src={theme === 'dark' ? "/image/header/logo-light.svg" : "/image/header/logo-dark.svg"}
                             alt="Logo"
                             width={50}
                             height={50}
@@ -118,8 +120,8 @@ export function Header() {
                             </div>
                             <Link className="header__btn" href={`/${locale}/contact`}>{t('contact')}</Link>
 
-                            <button className="header__theme" onClick={() => dispatch(toggleTheme())} >
-                                {isDarkTheme ? '🌙 Dark' : '☀️ Light'}
+                            <button className="header__theme" onClick={toggleTheme} >
+                                {theme === 'dark' ? '🌙 Dark' : '☀️ Light'}
                             </button>
                         </nav>
                     </div>

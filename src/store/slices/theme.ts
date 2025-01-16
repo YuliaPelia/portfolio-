@@ -16,6 +16,7 @@ const themeSlice = createSlice({
         getCurrentTheme(state) {
             const theme = localStorage.getItem('theme') || 'light';
             state.isDarkTheme = theme === 'light' ? document.body.classList.contains('light') : document.body.classList.contains('dark');
+            console.log(' state.isDarkTheme', state.isDarkTheme);
         },
         toggleTheme(state) {
             state.isDarkTheme = !state.isDarkTheme;

@@ -33,5 +33,21 @@
         }
       },
       "contact": "Order a site"
+    },
+    "Hero": {
+      "greeting": {
+        "morning": "Good morning!",
+        "day": "Good day!",
+        "evening": "Good evening!"
+      },
+      "title": "I'm Yulia, and I'm a web developer from Lviv 🥰",
+      "description": {
+        "part1": "I create",
+        "part2": "websites and mobile applications",
+        "part3": "for business and startups"
+      },
+      "alt": "Girl with a laptop",
+      "link": "Order",
+      "btn": "Get in touch"
     }
   }
