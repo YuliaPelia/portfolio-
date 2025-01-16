@@ -38,7 +38,8 @@
       "greeting": {
         "morning": "Good morning!",
         "day": "Good day!",
-        "evening": "Good evening!"
+        "evening": "Good evening!",
+        "night": "Good night!"
       },
       "title": "I'm Yulia, and I'm a web developer from Lviv 🥰",
       "description": {
@@ -49,5 +50,14 @@
       "alt": "Girl with a laptop",
       "link": "Order",
       "btn": "Get in touch"
+    },
+    "About": {
+      "title": "About me",
+      "description": {
+        "part1": "My name is Yulia 😊",
+        "part2": "For 2 years I worked in project employment in Ukrainian IT companies as a Frontend Developer. During this time, I gained valuable experience creating various web applications. I have implemented many impressive and successful projects, from landing pages to complex online stores.",
+        "part3": "My main focus is on developing on Next.js, React, and React Native frameworks, which allows me to create powerful and modern websites with high performance and speed.In addition, I specialize in developing websites using Nunjucks and Tailwind, which provides more flexibility in design and allows customers to easily make changes to the content"
+      },
+      "btn": "Contact me"
     }
   }

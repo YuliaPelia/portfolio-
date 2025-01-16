@@ -1,22 +1,28 @@
 .hero {
-    @apply py-2 mt-[52px] md:mt-[96px] xl:mt-0 xl:py-10;
+    background-image: url("/image/sections/hero/bg-mob-left.webp"), url("/image/sections/hero/bg-mob-right.webp");
+    background-position: left -75px top -75px, right -125px top -80px;
+    background-repeat: no-repeat;
+    @apply py-2 mt-[75px] md:mt-[96px] xl:mt-0 xl:py-10;
 
     &__img {
-        @apply mx-auto w-[195px] h-[195px] md:w-[226px] md:h-[226px];
+        @apply mx-auto w-[195px] h-[195px] md:w-[226px] md:h-[226px] xl:w-[326px] xl:h-[326px];
     }
     &__title {
         @apply font-black 2xl:text-5xl xl:text-4xl 2xl:max-w-[490px] xl:max-w-[365px] md:text-3xl md:mt-3  mx-auto text-center text-xl ;
     }
     &__subtitle {
-        @apply font-bold max-w-[215px] md:max-w-[315px] xl:max-w-[370px] 2xl:max-w-[500px] 2xl:leading-[55px] block mx-auto;
+        @apply font-bold xl:my-6 xl:max-w-[590px] xl:text-3xl  max-w-[215px] md:max-w-[320px]  2xl:leading-[40px] block mx-auto md:text-2xl md:text-center ;
     }
     &__description {
-        @apply font-medium text-center max-w-[320px] md:max-w-[470px] md:text-2xl mx-auto mt-3
+        @apply font-medium  text-center max-w-[320px] md:max-w-[470px] md:text-2xl mx-auto mt-3
     }
     &__order {
-        @apply md:text-xl xl:m-0 2xl:text-2xl rounded-[44px] text-lg 2xl:w-[250px]  border-[1px] md:w-[210px] border-light border-solid hover:border-light hover:text-light duration-500 py-2 w-[200px] text-center px-10 bg-light text-white mx-auto block  mt-10  font-semibold
+        @apply md:text-xl xl:m-0 2xl:text-2xl rounded-[44px] text-lg 2xl:w-[250px]  border-[1px] md:w-[210px] border-light border-solid hover:border-light hover:bg-transparent hover:text-light duration-500 py-2 w-[200px] text-center px-10 bg-light text-white mx-auto block  mt-10  font-semibold
     }
     &__btn {
-        @apply rounded-[44px] 2xl:w-[250px] 2xl:text-2xl xl:m-0 md:text-xl md:mt-5 md:w-[210px] hover:border-light hover:text-light duration-200 py-2 w-[200px]  text-center px-10 bg-transparent  mx-auto block  mt-3 text-lg font-medium
+        @apply rounded-[44px] shadow-md shadow-neutral-200 xl:m-0 2xl:w-[250px] 2xl:text-2xl  md:text-xl md:mt-5 md:w-[210px] hover:border-light hover:text-light duration-200 py-2 w-[200px]  text-center px-10 bg-transparent  mx-auto block  mt-3 text-lg font-medium
+    }
+    &__btns {
+        @apply xl:flex gap-6 justify-center mt-10;
     }
 }

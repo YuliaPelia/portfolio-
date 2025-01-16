@@ -3,9 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-// import { useDispatch, useSelector } from "react-redux";
-// import { toggleTheme } from "@/store/slices/theme";
-// import { RootState } from "@/store/store";
 import { useTheme } from "@/theme/Theme";
 
 import { useLocale } from "next-intl";
@@ -18,8 +15,6 @@ export function Header() {
     const { theme, toggleTheme } = useTheme();
     const locale = useLocale();
     const t = useTranslations('Header');
-    // const dispatch = useDispatch();
-    // const isDarkTheme = useSelector((state: RootState) => state.theme.isDarkTheme);
     const tNavList = useTranslations('Header.list');
     const keys = ['about', 'services', 'portfolio', 'blog', 'contact'] as const;
     const headerMenuRef = useRef<HTMLDivElement>(null);

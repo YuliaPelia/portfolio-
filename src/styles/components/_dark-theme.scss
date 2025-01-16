@@ -5,4 +5,11 @@
             @apply bg-[#ededed];
         }
     }
+    .header  {
+        @apply bg-[#0a0a0a] shadow-sm shadow-neutral-400;
+    }
+    .hero {
+        background-image: url("/image/sections/hero/bg-mob-left-dark.webp"), url("/image/sections/hero/bg-mob-right-dark.webp");
+
+    }
 }

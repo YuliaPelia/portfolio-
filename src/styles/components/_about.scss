@@ -1,0 +1,17 @@
+.about {
+    @apply py-[60px];
+    &__content {
+        @apply xl:flex-row-reverse xl:flex  xl:gap-12 xl:items-start
+    }
+
+    &__description {
+        @apply text-lg mt-6 md:text-xl xl:text-2xl 2xl:text-3xl
+    }
+    &__btn {
+        @apply my-6 shadow-md border-none shadow-light md:ml-auto md:block;
+        ;
+    }
+    &__img {
+        @apply rounded-3xl md:flex-shrink-0
+    }
+}
