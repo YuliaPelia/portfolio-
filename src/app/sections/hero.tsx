@@ -1,10 +1,13 @@
+
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { getCurrentTime } from "@/features/getCurrentTime";
+import { useLocale } from "next-intl";
 
 export default function Hero() {
-
+    const locale = useLocale();
     const t = useTranslations('Hero');
     // const [greetingMessage, setGreetingMessage] = useState('');
 
@@ -39,7 +42,7 @@ export default function Hero() {
                 </div>
 
                 <div className="hero__btns">
-                    <Link href="/contact" className="hero__order"> {t('link')}</Link>
+                    <Link href={`/${locale}/contact`}  className="hero__order"> {t('link')}</Link>
 
                     <button className="hero__btn">{t('btn')}</button>
                 </div>

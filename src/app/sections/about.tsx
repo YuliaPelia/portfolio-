@@ -9,14 +9,14 @@ export default function About() {
         <section className="about">
             <div className="container ">
                 <h2 className="about__title title">{t('title')}</h2>
-        <div className="about__content">
-                <div>
-                    <p className="about__description description">{t('description.part1')} <br /> <br /> {t('description.part2')} <br /> <br /> {t('description.part3')}</p>
-                    <button className="about__btn btn">{t('btn')}</button>
-                </div>
+                <div className="about__content">
+                    <div>
+                        <p className="about__description description"><span>{t('description.part1')}<br /> <br /> {t('description.part2')}</span> <br /> <br /> <span>{t('description.part3')}</span></p>
+                        <button className="about__btn btn">{t('btn')}</button>
+                    </div>
 
-                <Image className="about__img" src="/image/sections/about/Me.webp" width={353} height={353} alt="about" />
-            </div>
+                    <Image className="about__img" src="/image/sections/about/Me.webp" width={353} height={353} alt="about" />
+                </div>
             </div>
         </section>
     )

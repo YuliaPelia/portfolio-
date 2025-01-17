@@ -3,3 +3,14 @@ export type Props = {
 
 }
 export type Locale = 'en' | 'ua';
+
+export interface ItemData {
+    id: number;
+    title: string;
+    description: string;
+    img: string;
+    link: {
+        title: string;
+        link: string;
+    };
+}

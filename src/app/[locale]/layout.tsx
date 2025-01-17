@@ -1,4 +1,4 @@
-import type { Viewport } from 'next'
+// import type { Viewport } from 'next'
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -8,11 +8,11 @@ import type { Metadata } from 'next';
 import { Montserrat, Inter } from "next/font/google";
 import { getTranslations } from 'next-intl/server';
 import { Props, Locale } from '@/types/types';
-import '@/styles/globals.scss';
 import BaseLayout from '../components/base-layout';
 import { ThemeProvider } from '@/theme/Theme';
 import ThemeHandler from '@/theme/ThemeHandler';
-
+import '@/shared/api/fetchData';
+import '@/styles/globals.scss';
 
 const inter = Inter({
   // variable: "--font-inter",
@@ -68,9 +68,9 @@ export async function generateMetadata({ params }: Props,
   }
 }
 
-export const viewport: Viewport = {
-  themeColor: 'dark',
-}
+// export const viewport: Viewport = {
+//   themeColor: 'dark',
+// }
 
 // export const metadata: Metadata = {
 //   title: "Portfolio",

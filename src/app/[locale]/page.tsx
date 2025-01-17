@@ -2,6 +2,7 @@
 
 import About from '../sections/about';
 import Hero from '../sections/hero';
+import Service from '../sections/service';
 
 export default function HomePage() {
 
@@ -13,6 +14,7 @@ export default function HomePage() {
         <>
             <Hero />
             <About/>
+            <Service/>
         </>
         
 
