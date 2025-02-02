@@ -3,16 +3,20 @@ import { Suspense } from 'react';
 import Loading from '../components/loading';
 import List from '../components/list';
 
+
+
 export default function Service() {
+
+    
     const t = useTranslations('Service');
     return (
-        <section className="about">
+        <section className="service">
             <div className="container">
-                <h2 className="about__title title">{t('title')}</h2>
-                <p className="description">{t('description')}</p>
+                <h2 className="service__title title">{t('title')}</h2>
+                <p className="service__description description">{t('description')}</p>
 
                 <Suspense fallback={<Loading />}>
-                    <List />
+                    <List classForItem="service__item" />
                 </Suspense>
             </div>
         </section>

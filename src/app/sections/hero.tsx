@@ -9,14 +9,14 @@ import { useLocale } from "next-intl";
 export default function Hero() {
     const locale = useLocale();
     const t = useTranslations('Hero');
-    // const [greetingMessage, setGreetingMessage] = useState('');
+
 
     const time = getCurrentTime()
-    console.log(time);
+
     let greeting = t('greeting.day');
 
     if (time >= 23 && time <= 4 || time === 0) {
-        console.log('night');
+
 
         greeting = t('greeting.night')
     }

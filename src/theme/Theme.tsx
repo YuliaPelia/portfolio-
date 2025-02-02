@@ -10,29 +10,30 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const getInitialTheme = () => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'light';
-    }
-    return 'light';
-  };
-
-  const [theme, setTheme] = useState<string>(getInitialTheme);
-  
+  const [theme, setTheme] = useState<string | null>(null); // Початкове значення `null`
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+  }, []);
+
+  useEffect(() => {
+    if (theme) {
+      localStorage.setItem('theme', theme);
+    }
   }, [theme]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
+  if (theme === null) {
+    return null; 
+  }
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-    <div className={theme} suppressHydrationWarning>
       {children}
-    </div>
   </ThemeContext.Provider>
   );
 };

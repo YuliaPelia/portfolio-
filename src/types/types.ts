@@ -13,4 +13,6 @@ export interface ItemData {
         title: string;
         link: string;
     };
+
+    price: string;
 }

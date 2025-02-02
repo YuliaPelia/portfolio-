@@ -15,4 +15,8 @@
     .about {
         @apply bg-[#0a0a0a];
     }
+    .service__item {
+        box-shadow: 24px 24px 97px 0 rgba(255, 255, 255, 0.1);
+
+    }
 }

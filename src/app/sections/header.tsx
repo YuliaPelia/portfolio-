@@ -69,7 +69,6 @@ export function Header() {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-        console.log(!isMenuOpen);
         localStorage.setItem('isMenuOpen', JSON.stringify(!isMenuOpen));
 
         toggle?.classList.toggle('header__toggle--active');
