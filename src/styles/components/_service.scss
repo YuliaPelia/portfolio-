@@ -2,7 +2,7 @@
     @apply py-[60px] overflow-hidden;
 
     &__description {
-        @apply mt-6
+        @apply mt-6 xl:max-w-[630px] 2xl:text-2xl 2xl:max-w-[800px];
     }
 
     .list {

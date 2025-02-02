@@ -3,12 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { ItemData } from "@/types/types";
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 
 export default function Item({ item, classForItem }: { item: ItemData, classForItem: string }) {
+    const locale = useLocale();
     return (
         <li  className={cn(classForItem)}>
             <Link className="w-full h-full block"
-                href={item?.link?.link}
+                href={`/${locale}/${item?.link?.link}`}
             >
              <h3 className="item__link">
              {item?.link?.title}

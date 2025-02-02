@@ -2,7 +2,7 @@
     background-image: url("/image/sections/hero/bg-mob-left.webp"), url("/image/sections/hero/bg-mob-right.webp");
     background-position: left -75px top -75px, right -125px top -80px;
     background-repeat: no-repeat;
-    @apply py-2 mt-[75px] md:mt-[96px] xl:mt-0 xl:py-10;
+    @apply py-2 mt-[75px] md:mt-[96px]  xl:py-10;
 
     &__img {
         @apply mx-auto w-[195px] h-[195px] md:w-[226px] md:h-[226px] xl:w-[326px] xl:h-[326px];
