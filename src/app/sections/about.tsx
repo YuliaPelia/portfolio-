@@ -11,7 +11,7 @@ export default function About() {
                 <h2 className="about__title title">{t('title')}</h2>
                 <div className="about__content">
                     <div>
-                        <p className="about__description description"><span>{t('description.part1')}<br /> <br /> {t('description.part2')}</span> <br /> <br /> <span>{t('description.part3')}</span></p>
+                        <p className="about__description description"><span>{t('description.part1')}<br /> <br  /> {t('description.part2')}</span> <br /> <br /> <span>{t('description.part3')}</span></p>
                         <button className="about__btn btn">{t('btn')}</button>
                     </div>
 
