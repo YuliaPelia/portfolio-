@@ -50,44 +50,10 @@
   },
   "Service": {
     "title": "Services",
-    "description": "Here you can familiarize yourself with the wide range of services I provide. Discover the variety of opportunities offered in the field of programming and web design",
-    "list": [
-      {
-        "link": {
-          "title": "Landing",
-          "link": "/services/landing"
-        }
-      },
-      {
-        "link": {
-          "title": "e-Commerce",
-          "link": "/services/online-store"
-        }
-      },
-      {
-        "link": {
-          "title": "Business card site",
-          "link": "/services/business-card"
-        }
-      },
-      {
-        "link": {
-          "title": "Site catalog",
-          "link": "/services/site-catalog"
-        }
-      },
-      {
-        "link": {
-          "title": "Corporate site",
-          "link": "/services/corporate"
-        }
-      },
-      {
-        "link": {
-          "title": "Personal development",
-          "link": "/services/personal-development"
-        }
-      }
-    ]
+    "description": "Here you can familiarize yourself with the wide range of services I provide. Discover the variety of opportunities offered in the field of programming and web design"
+  },
+  "Technologies": {
+    "title": "My technology stack"
+
   }
 }
