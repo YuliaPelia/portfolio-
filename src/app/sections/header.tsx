@@ -15,8 +15,7 @@ export function Header() {
     const { theme, toggleTheme } = useTheme();
     const locale = useLocale();
     const t = useTranslations('Header');
-    const tNavList = useTranslations('Header.list');
-    const keys = ['about', 'services', 'portfolio', 'blog', 'contact'] as const;
+
     const headerMenuRef = useRef<HTMLDivElement>(null);
     const toggleRef = useRef<HTMLDivElement>(null);
 
@@ -99,12 +98,17 @@ export function Header() {
 
                     <div className="header__menu" ref={headerMenuRef}>
                         <ul className='header__list xl:flex xl:flex-row xl:gap-6'>
-                            {keys.map((key) => (
+                            {/* {keys.map((key) => (
                                 <li key={key}>
 
                                     <Link className='header__link ' href={`/${locale}/${tNavList(`${key}.link`)}`}>{tNavList(`${key}.title`)}</Link>
                                 </li>
-                            ))}
+                            ))} */}
+                            <li><Link className='header__link ' href={`#about`}>{t('about')}</Link></li>
+                            <li><Link className='header__link ' href={`#services`}>{t('services')}</Link></li>
+                            <li><Link className='header__link ' href={`#portfolio`}>{t('portfolio')}</Link></li>
+                            <li><Link className='header__link ' href={`#blog`}>{t('blog')}</Link></li>
+                            <li><Link className='header__link ' href={`#contact`}>{t('contact')}</Link></li>
                         </ul>
 
                         <nav className="header__nav">
@@ -112,7 +116,7 @@ export function Header() {
                                 <Link className="header__lang--en" href={'/en'} >EN</Link>
                                 <Link className="header__lang--ua" href={'/ua'} >UA</Link>
                             </div>
-                            <Link className="header__btn" href={`/${locale}/contact`}>{t('contact')}</Link>
+                            <Link className="header__btn" href={`/${locale}/contact`}>{t('contactOrder')}</Link>
 
                             <button className="header__theme" onClick={toggleTheme} >
                                 {theme === 'dark' ? '🌙 Dark' : '☀️ Light'}

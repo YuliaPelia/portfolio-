@@ -1,107 +1,93 @@
 {
-    "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "Metadata": {
+    "title": "Yulia Pelyachyk | Website and mobile application development for business and startups 👩🏽‍💻 - High-quality ✅, affordable ✅, unique ✅",
+    "description": "Web development for businesses and startups: from landing pages to online stores, including mobile applications. Quality, speed, and individual approach in every project. I will make your website functional and attractive to users!",
+    "ogpFb": "/image/OGP/fb-en.png",
+    "ogpTw": "/image/OGP/tw-en.png"
+  },
+  "Header": {
+    "about": "About me",
+
+    "services": "Services",
+
+    "portfolio": "Portfolio",
+
+    "blog": "Blog",
+
+    "contact": "Contact",
+
+    "contactOrder": "Order a site"
+  },
+  "Hero": {
+    "greeting": {
+      "morning": "Good morning!",
+      "day": "Good day!",
+      "evening": "Good evening!",
+      "night": "Good night!"
     },
-    "Metadata": {
-      "title": "Yulia Pelyachyk | Website and mobile application development for business and startups 👩🏽‍💻 - High-quality ✅, affordable ✅, unique ✅",
-      "description": "Web development for businesses and startups: from landing pages to online stores, including mobile applications. Quality, speed, and individual approach in every project. I will make your website functional and attractive to users!",
-      "ogpFb": "/image/OGP/fb-en.png",
-      "ogpTw": "/image/OGP/tw-en.png"
+    "title": "I'm Yulia, and I'm a web developer from Lviv 🥰",
+    "description": {
+      "part1": "I create",
+      "part2": "websites and mobile applications",
+      "part3": "for business and startups"
     },
-    "Header": {
-      "list": {
-        "about": {
-          "title": "About me",
-          "link": "/"
-        },
-        "services": {
-          "title": "Services",
-          "link": "/"
-        },
-        "portfolio": {
-          "title": "Portfolio",
-          "link": "/"
-        },
-        "blog": {
-          "title": "Blog",
-          "link": "/"
-        },
-        "contact": {
-          "title": "Contact",
-          "link": "contact"
+    "alt": "Girl with a laptop",
+    "link": "Order",
+    "btn": "Get in touch"
+  },
+  "About": {
+    "title": "About me",
+    "description": {
+      "part1": "My name is Yulia 😊",
+      "part2": "For 2 years I worked in project employment in Ukrainian IT companies as a Frontend Developer. During this time, I gained valuable experience creating various web applications. I have implemented many impressive and successful projects, from landing pages to complex online stores.",
+      "part3": "My main focus is on developing on Next.js, React, and React Native frameworks, which allows me to create powerful and modern websites with high performance and speed.In addition, I specialize in developing websites using Nunjucks and Tailwind, which provides more flexibility in design and allows customers to easily make changes to the content"
+    },
+    "btn": "Contact me"
+  },
+  "Service": {
+    "title": "Services",
+    "description": "Here you can familiarize yourself with the wide range of services I provide. Discover the variety of opportunities offered in the field of programming and web design",
+    "list": [
+      {
+        "link": {
+          "title": "Landing",
+          "link": "/services/landing"
         }
       },
-      "contact": "Order a site"
-    },
-    "Hero": {
-      "greeting": {
-        "morning": "Good morning!",
-        "day": "Good day!",
-        "evening": "Good evening!",
-        "night": "Good night!"
-      },
-      "title": "I'm Yulia, and I'm a web developer from Lviv 🥰",
-      "description": {
-        "part1": "I create",
-        "part2": "websites and mobile applications",
-        "part3": "for business and startups"
-      },
-      "alt": "Girl with a laptop",
-      "link": "Order",
-      "btn": "Get in touch"
-    },
-    "About": {
-      "title": "About me",
-      "description": {
-        "part1": "My name is Yulia 😊",
-        "part2": "For 2 years I worked in project employment in Ukrainian IT companies as a Frontend Developer. During this time, I gained valuable experience creating various web applications. I have implemented many impressive and successful projects, from landing pages to complex online stores.",
-        "part3": "My main focus is on developing on Next.js, React, and React Native frameworks, which allows me to create powerful and modern websites with high performance and speed.In addition, I specialize in developing websites using Nunjucks and Tailwind, which provides more flexibility in design and allows customers to easily make changes to the content"
-      },
-      "btn": "Contact me"
-    },
-    "Service": {
-      "title": "Services",
-      "description": "Here you can familiarize yourself with the wide range of services I provide. Discover the variety of opportunities offered in the field of programming and web design",
-      "list": [
-        {
-          "link": {
-            "title": "Landing",
-            "link": "/services/landing"
-          }
-        },
-        {
-          "link": {
-            "title": "e-Commerce",
-            "link": "/services/online-store"
-          }
-        },
-        {
-          "link": {
-            "title": "Business card site",
-            "link": "/services/business-card"
-          }
-        },
-        {
-          "link": {
-            "title": "Site catalog",
-            "link": "/services/site-catalog"
-          }
-        },
-        {
-          "link": {
-            "title": "Corporate site",
-            "link": "/services/corporate"
-          }
-        },
-        {
-          "link": {
-            "title": "Personal development",
-            "link": "/services/personal-development"
-          }
+      {
+        "link": {
+          "title": "e-Commerce",
+          "link": "/services/online-store"
         }
-      ]
-    }
+      },
+      {
+        "link": {
+          "title": "Business card site",
+          "link": "/services/business-card"
+        }
+      },
+      {
+        "link": {
+          "title": "Site catalog",
+          "link": "/services/site-catalog"
+        }
+      },
+      {
+        "link": {
+          "title": "Corporate site",
+          "link": "/services/corporate"
+        }
+      },
+      {
+        "link": {
+          "title": "Personal development",
+          "link": "/services/personal-development"
+        }
+      }
+    ]
   }
-
-
+}

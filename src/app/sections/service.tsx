@@ -47,7 +47,7 @@ export default function Service() {
         );
     }
     return (
-        <section className="service">
+        <section className="service" id='services'>
             <div className="container">
                 <h2 className="service__title title">{t('title')}</h2>
                 <p className="service__description description">{t('description')}</p>

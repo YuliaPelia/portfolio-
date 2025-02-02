@@ -6,7 +6,7 @@ export default function About() {
     const t = useTranslations('About');
 
     return (
-        <section className="about">
+        <section className="about" id="about">
             <div className="container ">
                 <h2 className="about__title title">{t('title')}</h2>
                 <div className="about__content">

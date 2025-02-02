@@ -10,29 +10,23 @@
     "ogpTw": "/image/OGP/tw.png"
   },
   "Header": {
-    "list": {
-      "about": {
-        "title": "Про мене",
-        "link": "/"
-      },
-      "services": {
-        "title": "Послуги",
-        "link": "/"
-      },
-      "portfolio": {
-        "title": "Портфоліо",
-        "link": "/"
-      },
-      "blog": {
-        "title": "Блог",
-        "link": "/"
-      },
-      "contact": {
-        "title": "Контакти",
-        "link": "contact"
-      }
-    },
-    "contact": "Замовити сайт"
+   
+      "about": "Про мене",
+     
+     
+      "services": 
+       "Послуги",
+      
+      
+      "portfolio":"Портфоліо",
+        
+      "blog":  "Блог",
+       
+      "contact": "Контакти",
+    
+      
+  
+    "contactOrder": "Замовити сайт"
   },
 
   "Hero": {
