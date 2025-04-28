@@ -1,0 +1,65 @@
+.work {
+    @apply py-[120px] overflow-hidden xl:py-40;
+
+    .list {
+        @apply relative  mt-20 overflow-visible;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @apply hidden  absolute top-1/2 -translate-y-1/2 w-10 h-10 z-10 cursor-pointer text-dark;
+    }
+
+    .swiper-button-prev {
+        @apply left-0;
+    }
+
+    .swiper-button-next {
+        @apply right-0;
+    }
+
+    .swiper-pagination-bullet {
+        @apply bg-dark;
+        
+        &-active {
+            @apply bg-light;
+        }
+    }
+    .swiper-pagination {
+        @apply bottom-[-5px]
+    }
+    
+    &__link {
+        @apply mt-5 inline-block font-medium text-white bg-light text-sm text-center px-9 py-3 rounded-[44px] 
+    }
+    &__description {
+        @apply mt-10 
+    }
+
+    &__item {
+        @apply flex flex-col items-center justify-center gap-6;
+        .step {
+            @apply relative py-[90px] px-[32px]  h-[353px] shadow-step rounded-tl-[88px] rounded-br-[88px] ;
+        }
+        .step {
+            @apply flex flex-col items-center justify-center gap-6;
+        }
+
+        .step__number {
+            @apply mx-auto md:w-[100px] md:h-[100px] absolute top-[-40px] left-[50%] -translate-x-1/2 w-[72px] h-[72px] px-[31px] pt-[20px] rounded-full bg-light font-bold text-[21px] text-center text-white;
+            span {
+                @apply text-2xl md:text-3xl absolute xl:text-4xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            }
+        }
+
+        .step__title {
+            @apply mt-3 font-semibold xl:text-4xl  text-[23px] md:text-3xl text-dark text-center
+        }
+
+        .step__description {
+            @apply mt-2 text-base md:max-w-[400px] xl:max-w-[500px] text-center xl:text-xl text-dark md:text-lg
+        }
+
+    }
+
+}

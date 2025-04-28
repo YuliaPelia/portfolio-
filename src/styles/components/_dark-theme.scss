@@ -19,4 +19,20 @@
         box-shadow: 24px 24px 97px 0 rgba(255, 255, 255, 0.1);
 
     }
+    .work {
+        .step__title {
+            @apply text-white;
+        }
+        .step__description {
+            @apply text-white;
+        }
+        .step__number {
+            @apply text-white;
+        }
+        .step {
+            @apply bg-[#0a0a0a] shadow-darkTheme;
+
+        }
+        
+    }
 }

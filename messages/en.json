@@ -50,10 +50,21 @@
   },
   "Service": {
     "title": "Services",
-    "description": "Here you can familiarize yourself with the wide range of services I provide. Discover the variety of opportunities offered in the field of programming and web design"
+    "description": "Here you can familiarize yourself with the wide range of services I provide. Discover the variety of opportunities offered in the field of programming and web design",
+    "error": "Technical chocolate, will be grateful if you write to the mail"
   },
   "Technologies": {
     "title": "My technology stack"
 
+  },
+  "Portfolio": {
+    "title": "Portfolio",
+    "description": "Here you can see some of my projects"
+  }, 
+  "Work": {
+    "title": "How to start working?",
+    "description": "To start working, you need to perform a few simple steps",
+    "order": "Fill in the brief",
+    "error": "Technical chocolate, will be grateful if you write to the mail"
   }
 }

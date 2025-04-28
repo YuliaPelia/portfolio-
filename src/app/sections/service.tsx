@@ -8,34 +8,44 @@ import { useState, useEffect } from 'react';
 import { fetchData } from "@/shared/api/fetchData"
 import { useLocale } from "next-intl";
 
+interface ServiceProps {
+    data: {
+        en: {
+            list: Array<{
+                title: string;
+                description: string;
+            }>;
+        };
+        ua: {
+            list: Array<{
+                title: string;
+                description: string;
+            }>;
+        };
+    }[];
+}
 
-export default function Service() {
+export default function Service({ data }: ServiceProps) {
     const t = useTranslations('Service');
-
     const [loading, setLoading] = useState<boolean>(true);
     const [items, setItems] = useState([]);
+    const [error, setError] = useState<boolean>(false);
     const locale = useLocale();
 
-
+    console.log(data);
     useEffect(() => {
         fetchData().then((data) => {
-
             if (locale === 'en') {
                 setItems(data[0].en.list);
-
             } else {
                 setItems(data[0].ua.list);
-
             }
-
             setLoading(false);
-
-        })
-            .catch(() => {
-                setLoading(false);
-            })
+        }).catch(() => {
+            setError(true);
+            setLoading(false);
+        });
     }, [locale]);
-
 
     if (loading) {
         return (
@@ -51,7 +61,7 @@ export default function Service() {
             <div className="container">
                 <h2 className="service__title title">{t('title')}</h2>
                 <p className="service__description description">{t('description')}</p>
-
+                {error ? <div className='text-red-500 mt-5' >{t('error')}</div> : ""}
                 <Suspense fallback={<Loading />}>
                     <List items={items} classForItem="service__item" />
                 </Suspense>
