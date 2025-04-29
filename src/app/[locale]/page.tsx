@@ -6,6 +6,7 @@ import Portfolio from '../sections/portfolio';
 import Service from '../sections/service';
 import Technologies from '../sections/technologies';
 import Work from '../sections/work';
+import Blog from '../sections/blog';
 export default function HomePage() {
 
 
@@ -20,6 +21,7 @@ export default function HomePage() {
             <Technologies/>
             <Portfolio/>
             <Work/>
+            <Blog/>
         </>
         
 

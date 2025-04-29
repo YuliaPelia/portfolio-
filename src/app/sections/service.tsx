@@ -8,31 +8,16 @@ import { useState, useEffect } from 'react';
 import { fetchData } from "@/shared/api/fetchData"
 import { useLocale } from "next-intl";
 
-interface ServiceProps {
-    data: {
-        en: {
-            list: Array<{
-                title: string;
-                description: string;
-            }>;
-        };
-        ua: {
-            list: Array<{
-                title: string;
-                description: string;
-            }>;
-        };
-    }[];
-}
 
-export default function Service({ data }: ServiceProps) {
+
+export default function Service() {
     const t = useTranslations('Service');
     const [loading, setLoading] = useState<boolean>(true);
     const [items, setItems] = useState([]);
     const [error, setError] = useState<boolean>(false);
     const locale = useLocale();
 
-    console.log(data);
+
     useEffect(() => {
         fetchData().then((data) => {
             if (locale === 'en') {

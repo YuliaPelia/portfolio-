@@ -66,5 +66,9 @@
     "description": "To start working, you need to perform a few simple steps",
     "order": "Fill in the brief",
     "error": "Technical chocolate, will be grateful if you write to the mail"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Here you can find interesting information about programming, design and much more. Learn more about my projects and activities, as well as get acquainted with interesting articles from the world of technology."
   }
 }
