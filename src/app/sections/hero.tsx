@@ -33,7 +33,7 @@ export default function Hero() {
     return (
         <section className="hero">
             <div className="container">
-                <Image className="hero__img" src="/image/sections/hero/girl-at-a-computer.webp" alt={t('alt')} width={195} height={195} priority />
+                <Image className="hero__img" src="https://res.cloudinary.com/dboiqigz3/image/upload/v1746024824/girl-at-a-computer_2_zzwlwi.webp" alt={t('alt')} width={195} height={195} priority />
                 <div>
                     <h1 className="hero__title">{greeting}</h1>
                     <h2 className="hero__subtitle">{t('title')}</h2>

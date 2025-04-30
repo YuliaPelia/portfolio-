@@ -39,7 +39,7 @@ interface Item {
 
 export default function HomePage() {
     const [loading, setLoading] = useState<boolean>(true);
-    const [items, setItems] = useState<Item>({blogs: [], list: [], options: []});
+    const [items, setItems] = useState<Item>({ blogs: [], list: [], options: [] });
     const [error, setError] = useState<boolean>(false);
     const locale = useLocale();
 
@@ -64,8 +64,6 @@ export default function HomePage() {
 
 
     return (
-        // <Provider store={store} >
-        // <Header />
 
         <>
             <Hero />
@@ -77,20 +75,5 @@ export default function HomePage() {
             <Blog items={items.blogs} error={error} loading={loading} />
         </>
 
-
-
-        // </Provider>
     );
 }
-
-// export async function getStaticProps() {
-//     const data = await fetchData();
-
-
-
-//     return {
-//         props: {
-//             data: data,
-//         },
-//     };
-// }

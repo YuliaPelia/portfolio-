@@ -15,7 +15,7 @@ export default function About() {
                         <button className="about__btn btn">{t('btn')}</button>
                     </div>
 
-                    <Image className="about__img" src="/image/sections/about/Me.webp" width={353} height={353} alt="about" />
+                    <Image className="about__img" src="https://res.cloudinary.com/dboiqigz3/image/upload/v1746024070/IMG_8107_1_2_jjep4g.webp" width={353} height={353} alt="about" />
                 </div>
             </div>
         </section>
