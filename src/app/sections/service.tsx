@@ -3,34 +3,22 @@
 import { useTranslations } from 'next-intl';
 import { Suspense } from 'react';
 import Loading from '../components/loading';
-import List from '../components/list';
-import { useState, useEffect } from 'react';
-import { fetchData } from "@/shared/api/fetchData"
-import { useLocale } from "next-intl";
+import ServiceList from '../components/service-list';
 
+interface ListItem {
+    link: {
+        title: string;
+        link: string;
+    };
+    img: string;
+    price: string;
+}
 
-
-export default function Service() {
+export default function Service({ items, error, loading }: { items: ListItem[], error: boolean, loading: boolean }) {
     const t = useTranslations('Service');
-    const [loading, setLoading] = useState<boolean>(true);
-    const [items, setItems] = useState([]);
-    const [error, setError] = useState<boolean>(false);
-    const locale = useLocale();
 
 
-    useEffect(() => {
-        fetchData().then((data) => {
-            if (locale === 'en') {
-                setItems(data[0].en.list);
-            } else {
-                setItems(data[0].ua.list);
-            }
-            setLoading(false);
-        }).catch(() => {
-            setError(true);
-            setLoading(false);
-        });
-    }, [locale]);
+
 
     if (loading) {
         return (
@@ -41,14 +29,16 @@ export default function Service() {
             </section>
         );
     }
+
+
     return (
         <section className="service" id='services'>
             <div className="container">
                 <h2 className="service__title title">{t('title')}</h2>
                 <p className="service__description description">{t('description')}</p>
-                {error ? <div className='text-red-500 mt-5' >{t('error')}</div> : ""}
+                {error ? <div className='text-red-500 mt-5'>{t('error')}</div> : ""}
                 <Suspense fallback={<Loading />}>
-                    <List items={items} classForItem="service__item" />
+                    <ServiceList items={items} classForItem="service__item" />
                 </Suspense>
             </div>
         </section>

@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl"
 import { Suspense } from "react";
-import { fetchData } from "@/shared/api/fetchData"
-import { useState, useEffect } from "react";
+
 import { useLocale } from "next-intl";
 import Loading from '../components/loading';
 import StepsList from '../components/steps-list';
@@ -14,42 +13,11 @@ interface Step {
     description: string;
 }
 
-export default function Work() {
+export default function Work({ items, error, loading }: { items: Step[], error: boolean, loading: boolean }) {
     const t = useTranslations('Work');
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<boolean>(false);
-
-    const [steps, setSteps] = useState<Step[]>([]);
     const locale = useLocale();
 
 
-    useEffect(() => {
-        fetchData().then((data) => {
-            if (locale === 'en') {
-                setSteps(data[0].en.options);
-
-
-            } else {
-                setSteps(data[0].ua.options);
-
-            }
-            if (data[0].en.options.length === 0 || data[0].ua.options.length === 0) {
-                setError(true);
-                console.log('error');
-
-            }
-
-
-            setLoading(false);
-
-        })
-            .catch(() => {
-                setLoading(false);
-                setError(true)
-                console.log(error);
-
-            })
-    }, [locale, error]);
 
     if (loading) {
         return (
@@ -78,7 +46,7 @@ export default function Work() {
                 {error ? <div className="text-red-500 mt-5" >{t('error')}</div> : ""}
 
                 <Suspense fallback={<Loading />}>
-                    <StepsList items={steps} classForItem="work__item" />
+                    <StepsList items={items} classForItem="work__item" />
                 </Suspense>
             </div>
         </section>

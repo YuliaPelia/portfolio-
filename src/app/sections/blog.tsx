@@ -1,8 +1,8 @@
-import { fetchData } from '@/shared/api/fetchData';
-import { useLocale, useTranslations } from 'next-intl';
+
 import { Suspense } from 'react';
 
-import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
+
 import Loading from '../components/loading';
 import Image from 'next/image';
 
@@ -11,30 +11,9 @@ interface BlogItem {
     img: string;
 }
 
-export default function Blog() {
+export default function Blog({ items, error, loading }: { items: BlogItem[], error: boolean, loading: boolean }) {
 
     const t = useTranslations('Blog');
-    const [loading, setLoading] = useState<boolean>(true);
-    const [items, setItems] = useState<BlogItem[]>([]);
-    const [error, setError] = useState<boolean>(false);
-    const locale = useLocale();
-
-
-    useEffect(() => {
-        fetchData().then((data) => {
-            console.log(data);
-            if (locale === 'en') {
-                setItems(data[0].en.blogs);
-            } else {
-                setItems(data[0].ua.blogs);
-            }
-
-            setLoading(false);
-        }).catch(() => {
-            setError(true);
-            setLoading(false);
-        });
-    }, [locale]);
 
     if (loading) {
         return (

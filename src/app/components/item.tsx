@@ -5,7 +5,12 @@ import { ItemData } from "@/types/types";
 import { cn } from "@/lib/utils";
 import { useLocale } from "next-intl";
 
-export default function Item({ item, classForItem }: { item: ItemData, classForItem: string }) {
+interface ItemProps {
+    item: ItemData;
+    classForItem: string;
+}
+
+export default function Item({ item, classForItem }: ItemProps) {
     const locale = useLocale();
     return (
         <li  className={cn(classForItem)}>
