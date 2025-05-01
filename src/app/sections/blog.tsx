@@ -2,18 +2,22 @@
 import { Suspense } from 'react';
 
 import { useTranslations } from 'next-intl';
-
+import { useLocale } from "next-intl";
 import Loading from '../components/loading';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 interface BlogItem {
     title: string;
     img: string;
+    id: string;
 }
 
 export default function Blog({ items, error, loading }: { items: BlogItem[], error: boolean, loading: boolean }) {
-
+    const locale = useLocale();
     const t = useTranslations('Blog');
+
 
     if (loading) {
         return (
@@ -41,15 +45,15 @@ export default function Blog({ items, error, loading }: { items: BlogItem[], err
                     <ul className='blog__list'>
                         {items.map((item, index) => (
                             <li className='blog__item' key={index}>
-                                <a href="#" className='blog__item-link'>
+                                <Link href={`/${locale}/blog/${item?.id}`} className='blog__item-link'>
                                     <h3 className='blog__item-title'>{item?.title}</h3>
                                     <Image className='blog__img' src={item?.img} alt={item?.title} width={100} height={100} />
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
                 </Suspense>
-
+                <Link href={`/${locale}/blog/`} className='blog__link btn '>{t('link')}</Link>
             </div>
         </section>
     )

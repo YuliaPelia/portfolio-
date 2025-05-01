@@ -1,0 +1,11 @@
+.contacts {
+    @apply py-10;
+
+    &__link {
+        &:hover {
+            svg {
+               @apply fill-coral;
+            }
+        };
+    }
+}

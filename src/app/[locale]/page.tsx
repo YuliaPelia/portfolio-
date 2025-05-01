@@ -7,6 +7,7 @@ import Service from '../sections/service';
 import Technologies from '../sections/technologies';
 import Work from '../sections/work';
 import Blog from '../sections/blog';
+import Contacts from '../sections/contacts';
 import { fetchData } from '@/shared/api/fetchData';
 import { useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
@@ -15,6 +16,7 @@ import { useState, useEffect } from 'react';
 interface BlogItem {
     title: string;
     img: string;
+    id: string;
 }
 
 interface ListItem {
@@ -73,6 +75,7 @@ export default function HomePage() {
             <Portfolio />
             <Work items={items.options} error={error} loading={loading} />
             <Blog items={items.blogs} error={error} loading={loading} />
+            <Contacts />
         </>
 
     );

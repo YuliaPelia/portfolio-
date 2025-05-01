@@ -69,6 +69,48 @@
   },
   "Blog": {
     "title": "Blog",
-    "description": "Here you can find interesting information about programming, design and much more. Learn more about my projects and activities, as well as get acquainted with interesting articles from the world of technology."
+    "description": "Here you can find interesting information about programming, design and much more. Learn more about my projects and activities, as well as get acquainted with interesting articles from the world of technology.",
+    "link": "See more"
+  },
+  "Contacts": {
+    "title": "Contacts",
+    "description": "You can always write to me on social media or leave a request on the website. <br/> <br/> You can also fill out the brief below to get acquainted with your future website in more detail",
+    "order": "Fill in the brief",
+    "form": {
+      "title": "Contact me",
+      "description": "Leave a request,  just <br/> fill in the form"
+    }
+  },
+  "inputsFieldsSection": {
+    "inputs": [
+      {
+        "title": "",
+        "type": "text",
+        "name": "name",
+        "placeholder": "Ім'я",
+        "dataField": "name",
+        "required": true,
+        "autocomplete": "name"
+      },
+      {
+        "title": "",
+        "type": "tel",
+        "name": "phone",
+        "placeholder": "",
+        "dataField": "phone",
+        "required": true,
+        "autocomplete": "tel"
+      },
+      {
+        "title": "",
+        "type": "email",
+        "name": "email",
+        "placeholder": "email@gmail.com",
+        "dataField": "email",
+        "required": true,
+        "autocomplete": "email"
+      }
+    ],
+    "btnSubmit": "Зареєструватися"
   }
 }

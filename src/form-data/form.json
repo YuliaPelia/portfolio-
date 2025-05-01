@@ -1,0 +1,34 @@
+{
+  "inputsFieldsSection": {
+    "inputs": [
+      {
+        "title": "",
+        "type": "text",
+        "name": "name",
+        "placeholder": "Ім'я",
+        "dataField": "name",
+        "required": true,
+        "autocomplete": "name"
+      },
+      {
+        "title": "",
+        "type": "tel",
+        "name": "phone",
+        "placeholder": "",
+        "dataField": "phone",
+        "required": true,
+        "autocomplete": "tel"
+      },
+      {
+        "title": "",
+        "type": "email",
+        "name": "email",
+        "placeholder": "email@gmail.com",
+        "dataField": "email",
+        "required": true,
+        "autocomplete": "email"
+      }
+    ],
+    "btnSubmit": "Зареєструватися"
+  }
+}

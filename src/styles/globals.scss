@@ -1,5 +1,6 @@
 // @import url(./vendors/tailwind);
 @use './vendors/tailwind';
+@use './vendors/intTelInput';
 @use './components/header';
 @use './components/hero';
 @use './components/about';
@@ -9,3 +10,4 @@
 @use './components/portfolio';
 @use './components/work';
 @use './components/blog';
+@use './components/contacts';
